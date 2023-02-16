@@ -27,11 +27,12 @@ public class Program {
 		
 		CarRental cr = new CarRental(start, finish, new Vehicle(carModel));
 		
-		System.out.println("Enter price per hour:");
+		System.out.print("Enter price per hour:");
 		double pricePerHour = sc.nextDouble();
-		System.out.println("Enter price per day:");
+		System.out.print("Enter price per day:");
 		double pricePerDay = sc.nextDouble();
 		
+		// Up casting BrTaxService to TaxService
 		RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrazilTaxService());
 		
 		rentalService.processInvoice(cr);
